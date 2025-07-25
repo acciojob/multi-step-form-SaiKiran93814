@@ -89,11 +89,16 @@ const Step = ({ step, formData, onChange, onNext, onPrevious, onSubmit }) => {
             Previous
           </button>
         )}
-        {step < 3 && (
-          <button type="button" className="btn" onClick={onNext}>
-            Next
-          </button>
-        )}
+       {step < 3 && (
+  <button
+    type="button"
+    id="nextBtn"  // ADD THIS
+    className="btn"
+    onClick={onNext}
+  >
+    Next
+  </button>
+)}
         {step === 3 && (
           <button type="submit" className="btn submit-btn">
             Submit
