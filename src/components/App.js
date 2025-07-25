@@ -13,7 +13,13 @@ const App = () => {
     expiry_date: ''
   });
 
-  const handleNext = () => setStep((prev) => prev + 1);
+  // ✅ Add delay for Cypress compatibility
+  const handleNext = () => {
+    setTimeout(() => {
+      setStep((prev) => prev + 1);
+    }, 50); // Small delay to allow DOM update
+  };
+
   const handlePrevious = () => setStep((prev) => prev - 1);
 
   const handleChange = (e) => {
@@ -27,6 +33,9 @@ const App = () => {
     console.log("Submitted:", formData);
   };
 
+  // ✅ Log current step to browser console
+  console.log("Current Step:", step);
+
   return (
     <div className="container">
       <Step
@@ -37,8 +46,6 @@ const App = () => {
         onPrevious={handlePrevious}
         onSubmit={handleSubmit}
       />
-
-      
     </div>
   );
 };
