@@ -15,10 +15,11 @@ const App = () => {
 
   // ✅ Add delay for Cypress compatibility
   const handleNext = () => {
-    setTimeout(() => {
-      setStep((prev) => prev + 1);
-    }, 50); // Small delay to allow DOM update
-  };
+  setTimeout(() => {
+    setStep((prev) => prev + 1);
+  }, 100); // Increased delay for Cypress timing
+};
+
 
   const handlePrevious = () => setStep((prev) => prev - 1);
 
