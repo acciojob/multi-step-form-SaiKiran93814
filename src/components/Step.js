@@ -41,7 +41,7 @@ const Step = ({ step, formData, onChange, onNext, onPrevious, onSubmit }) => {
             onChange={onChange}
             required
           />
-          <p>Price</p>
+          <p>Model</p>
           <input
             id="car_price"
             type="number"
